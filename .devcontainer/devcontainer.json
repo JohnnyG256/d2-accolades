@@ -1,0 +1,22 @@
+{
+	"build": { "dockerfile": "Dockerfile" },
+
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"[dockerfile]": {
+					"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+				},
+				"svelte.enable-ts-plugin": true,
+				"svelte.plugin.svelte.defaultScriptLanguage": "ts"
+			},
+			"extensions": [
+				"svelte.svelte-vscode",
+				"esbenp.prettier-vscode",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
+	"postCreateCommand": ["npm", "install"]
+}
