@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { components } from '$lib/bungie-api';
+	import type { components } from '$lib/bungie/api';
 
 	export let userInfo: components['schemas']['User.UserSearchResponseDetail']['destinyMemberships'];
 
