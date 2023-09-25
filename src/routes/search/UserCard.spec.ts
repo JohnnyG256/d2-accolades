@@ -7,7 +7,7 @@ import type { ComponentProps } from 'svelte';
 
 const mockInfo: ComponentProps<UserCard>['userInfo'] = [
 	{
-		membershipId: 12345678,
+		membershipId: "12345678",
 		membershipType: 3,
 		crossSaveOverride: 0,
 		bungieGlobalDisplayName: 'Bob',
@@ -58,7 +58,7 @@ describe('UserCard', () => {
 		render(UserCard, { userInfo: mockInfo });
 
 		const link = screen.getByRole('link');
-		expect(link.getAttribute('href')).toBe('/12345678/3');
+		expect(link.getAttribute('href')).toBe('/3/12345678');
 	});
 
 	it('should use info for primary platform if crossave is active', () => {
@@ -66,7 +66,7 @@ describe('UserCard', () => {
 			userInfo: [
 				{ ...mockInfo[0], crossSaveOverride: 2 },
 				{
-					membershipId: 87654321,
+					membershipId: "87654321",
 					membershipType: 2,
 					crossSaveOverride: 2,
 					bungieGlobalDisplayName: 'Bobby',
@@ -77,7 +77,7 @@ describe('UserCard', () => {
 		});
 
 		const link = screen.getByRole('link', { name: /Bobby#4321/ });
-		expect(link.getAttribute('href')).toBe('/87654321/2');
+		expect(link.getAttribute('href')).toBe('/2/87654321');
 
 		const image = screen.getByRole('img');
 		expect(image.getAttribute('src')).toBe('https://www.bungie.net/different/icon/path.png');

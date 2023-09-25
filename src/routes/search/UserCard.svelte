@@ -7,7 +7,7 @@
 		(info) => info.crossSaveOverride === 0 || info.crossSaveOverride === info.membershipType
 	);
 
-	$: userLink = `/${info?.membershipId}/${info?.membershipType}`;
+	$: userLink = `/${info?.membershipType}/${info?.membershipId}`;
 	$: userName = `${info?.bungieGlobalDisplayName}#${info?.bungieGlobalDisplayNameCode}`;
 	$: platformIconLink = `https://www.bungie.net${info?.iconPath}`;
 

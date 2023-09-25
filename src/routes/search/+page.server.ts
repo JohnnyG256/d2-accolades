@@ -40,7 +40,7 @@ export const load = async function ({ url, fetch }) {
 			throw error(500);
 		}
 
-		throw redirect(300, `/${primaryData.membershipId}/${primaryData.membershipType}`);
+		throw redirect(300, `/${primaryData.membershipType}/${primaryData.membershipId}`);
 	}
 
 	return responseData;

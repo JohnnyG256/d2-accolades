@@ -1,4 +1,4 @@
-import type { components } from '$lib/bungie-api';
+import type { components } from '$lib/bungie/api';
 
 export const getPrimaryPlatformData = function (
 	data: components['schemas']['User.UserSearchResponseDetail']['destinyMemberships']
