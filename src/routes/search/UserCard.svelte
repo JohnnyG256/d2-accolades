@@ -1,11 +1,7 @@
 <script lang="ts">
 	import type { components } from '$lib/bungie/api';
 
-	export let userInfo: components['schemas']['User.UserSearchResponseDetail']['destinyMemberships'];
-
-	$: info = userInfo?.find(
-		(info) => info.crossSaveOverride === 0 || info.crossSaveOverride === info.membershipType
-	);
+	export let info: components['schemas']['User.UserInfoCard'];
 
 	$: userLink = `/${info?.membershipType}/${info?.membershipId}`;
 	$: userName = `${info?.bungieGlobalDisplayName}#${info?.bungieGlobalDisplayNameCode}`;
