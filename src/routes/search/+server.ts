@@ -1,8 +1,9 @@
+import { API_KEY } from '$env/static/private';
 import { newClient } from '$lib/bungie/client.js';
 import { error } from '@sveltejs/kit';
 
 export const GET = async function ({ url, fetch }) {
-	const client = await newClient(true, fetch);
+	const client = newClient(API_KEY, fetch);
 
 	const name = url.searchParams.get('name');
 	if (!name) {
