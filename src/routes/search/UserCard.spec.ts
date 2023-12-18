@@ -56,6 +56,6 @@ describe('UserCard', () => {
 		render(UserCard, { info: mockInfo });
 
 		const link = screen.getByRole('link');
-		expect(link.getAttribute('href')).toBe('/3/12345678');
+		expect(link.getAttribute('href')).toBe('/12345678');
 	});
 });

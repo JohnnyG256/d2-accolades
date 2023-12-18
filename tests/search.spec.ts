@@ -18,7 +18,7 @@ test('searching for player should return proper search results', async ({ page }
 	expect(await searchResults.count()).toBeGreaterThan(30);
 
 	for (const link of await searchResults.all()) {
-		await expect(link).toHaveAttribute('href', /^\/\d\/\d{19}$/);
+		await expect(link).toHaveAttribute('href', /^\/\d{19}$/);
 	}
 
 	// Should only show primary account if crossave is active
@@ -29,14 +29,14 @@ test("should redirect to player's report page if only one player is found", asyn
 	await searchBox.fill('Electrobrains');
 	await searchBox.press('Enter');
 
-	await expect(page).toHaveURL('/3/4611686018505157425');
+	await expect(page).toHaveURL('/4611686018505157425');
 });
 
 test("should support queries which include player's hash code", async ({ page }) => {
 	await searchBox.fill('leopard#4271');
 	await searchBox.press('Enter');
 
-	await expect(page).toHaveURL('/3/4611686018467356666');
+	await expect(page).toHaveURL('/4611686018467356666');
 });
 
 test('should handle a query with no found players', async ({ page }) => {

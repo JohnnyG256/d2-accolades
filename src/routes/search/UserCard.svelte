@@ -3,7 +3,7 @@
 
 	export let info: components['schemas']['User.UserInfoCard'];
 
-	$: userLink = `/${info?.membershipType}/${info?.membershipId}`;
+	$: userLink = `/${info?.membershipId}`;
 	$: userName = `${info?.bungieGlobalDisplayName}#${info?.bungieGlobalDisplayNameCode}`;
 	$: platformIconLink = `https://www.bungie.net${info?.iconPath}`;
 

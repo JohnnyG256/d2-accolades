@@ -8,7 +8,7 @@ export const load = async function ({ url, fetch }) {
 
 	if (searchResults.length === 1) {
 		const user = searchResults[0];
-		throw redirect(302, `${user.membershipType}/${user.membershipId}`);
+		throw redirect(302, `/${user.membershipId}`);
 	}
 
 	return { searchResults };
