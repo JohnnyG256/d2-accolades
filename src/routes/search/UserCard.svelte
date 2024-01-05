@@ -35,6 +35,6 @@
 </script>
 
 <a href={userLink}>
-	<img src={platformIconLink} alt={platform} />
+	<!-- <img src={platformIconLink} alt={platform} /> -->
 	{userName}
 </a>

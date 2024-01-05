@@ -1,3 +1,6 @@
 <form name="user" role="search" action="/search">
-	<input type="search" name="name" />
+	<label>
+		Search for player: 
+	<input type="search" name="name" placeholder="BungieName#1234" />
+	</label>
 </form>
